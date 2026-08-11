@@ -74,7 +74,7 @@ CREATE OR REPLACE TABLE RAW.order_items (
 );
 
 -- generated/reviews.csv (clean, typed) — free text for the AI layer:
-ZOMATO.RAW.FOODZOMATO.RAW.ZOMATO_RAW_STAGECREATE OR REPLACE TABLE RAW.reviews (
+CREATE OR REPLACE TABLE RAW.reviews (
   review_id     NUMBER,
   order_id      NUMBER,
   user_id       NUMBER,

@@ -1,0 +1,12 @@
+sources:
+  - name: raw              # Snowflake schema containing raw tables
+    database: zomato     # Replace with your database
+    schema: raw
+    tables:
+      - name: orders
+      - name: restaurants
+      - name: users
+      - name: menu
+      - name: order_items
+      - name: reviews
+      - name: food
