@@ -1,1 +1,17 @@
 data/
+
+# dbt
+zomato/profiles.yml
+zomato/target/
+zomato/dbt_packages/
+zomato/logs/
+zomato/.user.yml
+
+# Airflow
+airflow/.env
+airflow/logs/
+airflow/dbt_venv/
+
+# Python
+__pycache__/
+*.pyc

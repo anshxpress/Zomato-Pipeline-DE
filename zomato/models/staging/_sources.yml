@@ -10,3 +10,9 @@ sources:
       - name: order_items
       - name: reviews
       - name: food
+
+  - name: ai
+    database: zomato
+    schema: ai
+    tables:
+      - name: review_enriched
