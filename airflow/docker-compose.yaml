@@ -44,7 +44,7 @@ services:
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 5s
-      retries: 5
+      retries: 20
 
   airflow-init:
     <<: *airflow-common
@@ -59,7 +59,7 @@ services:
   apiserver:
     <<: *airflow-common
     command: api-server          # Airflow 3: replaces `webserver`
-    ports: ["8080:8080"]
+    ports: ["8082:8080"]
     restart: always
     depends_on:
       airflow-init:

@@ -77,13 +77,36 @@ Analytics / AI
 - dbt
 - OpenAI API key (AI features only)
 
-### Run dbt
+### Start Airflow
+
+1. Fill your credentials in `airflow/.env.example` and rename it to `airflow/.env` (if applicable).
+2. Start the Airflow cluster using Docker Compose:
+
+```bash
+cd airflow
+docker compose build
+docker compose up -d
+```
+
+3. Access the Airflow UI at [http://localhost:8082](http://localhost:8082) (Default login: admin/admin).
+
+### Run dbt & Start Docs Server
+
+Assuming you have `uv` installed, you can use it to easily run `dbt` and its docs server without a local virtual environment:
 
 ```bash
 cd zomato
-dbt debug
-dbt build
+
+# Run models
+uvx --from dbt-snowflake dbt debug --profiles-dir .
+uvx --from dbt-snowflake dbt build --profiles-dir .
+
+# Generate and serve dbt docs (served on port 8085)
+uvx --from dbt-snowflake dbt docs generate --profiles-dir .
+uvx --from dbt-snowflake dbt docs serve --profiles-dir . --port 8085
 ```
+
+Access the dbt docs at [http://localhost:8085](http://localhost:8085).
 
 ## Data Engineering Concepts
 

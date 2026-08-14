@@ -9,6 +9,7 @@ zomato/.user.yml
 
 # Airflow
 airflow/.env
+ai/.env
 airflow/logs/
 airflow/dbt_venv/
 
