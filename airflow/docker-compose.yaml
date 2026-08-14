@@ -17,7 +17,8 @@ x-airflow-common: &airflow-common
     # SERVICE NAME, not localhost. Without this, tasks die → "state mismatch ... failed".
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://apiserver:8080/execution/'
     # dbt + the AI task read these:
-    AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: '120'
+    AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: '300'
+    AIRFLOW__CORE__DAG_FILE_PROCESSOR_TIMEOUT: '300'
     SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT}
     SNOWFLAKE_USER: ${SNOWFLAKE_USER}
     SNOWFLAKE_PASSWORD: ${SNOWFLAKE_PASSWORD}

@@ -108,6 +108,26 @@ uvx --from dbt-snowflake dbt docs serve --profiles-dir . --port 8085
 
 Access the dbt docs at [http://localhost:8085](http://localhost:8085).
 
+### Start Streamlit Apps
+
+1. Fill your credentials in `ai/.env` (Snowflake + OpenAI API key).
+2. Install dependencies:
+
+```bash
+cd ai
+pip install -r requirements.txt
+```
+
+3. Run either app:
+
+```bash
+# RAG Chat – ask questions answered from review embeddings
+streamlit run rag_chat.py            # http://localhost:8501
+
+# Text-to-SQL – ask questions in English, get SQL + results
+streamlit run text_to_sql.py         # http://localhost:8502
+```
+
 ## Data Engineering Concepts
 
 This project demonstrates:

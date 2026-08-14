@@ -16,3 +16,6 @@ airflow/dbt_venv/
 # Python
 __pycache__/
 *.pyc
+
+# AI cache
+*.parquet

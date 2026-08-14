@@ -7,5 +7,5 @@ RUN pip install uv
 RUN uv venv /opt/airflow/dbt_venv && \
     uv pip install --python /opt/airflow/dbt_venv dbt-snowflake
 
-# Install necessary providers in the main airflow environment
-RUN pip install --no-cache-dir apache-airflow-providers-snowflake apache-airflow-providers-fab
+# Install necessary providers and packages in the main airflow environment
+RUN pip install --no-cache-dir apache-airflow-providers-snowflake apache-airflow-providers-fab openai
